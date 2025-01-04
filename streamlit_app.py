@@ -36,22 +36,22 @@ st.header("2. Data Visualization")
 with st.echo():
     # Visualize the number of patients with and without heart disease
     st.write("Visualization of Patients with and without Heart Disease:")
-    sns.countplot(x='target', data=data)
+    fig=sns.countplot(x='target', data=data)
     plt.title('Patients with/without Heart Disease')
-    st.pyplot()
+    st.pyplot(fig)
 
     # Visualize the relationship between age and heart disease
     st.write("Visualization of Age vs Heart Disease:")
-    sns.boxplot(x='target', y='age', data=data)
+    fig=sns.boxplot(x='target', y='age', data=data)
     plt.title('Age vs Heart Disease')
-    st.pyplot()
+    st.pyplot(fig)
 
     # Visualize correlation heatmap
     st.write("Correlation Heatmap:")
-    plt.figure(figsize=(12,8))
+    fig=plt.figure(figsize=(12,8))
     sns.heatmap(correlation, annot=True, cmap='coolwarm')
     plt.title('Correlation Matrix')
-    st.pyplot()
+    st.pyplot(fig)
 
 # Task 3: Logistic Regression
 st.header("3. Logistic Regression")
