@@ -36,22 +36,22 @@ st.header("2. Data Visualization")
 with st.echo():
     # Visualize the number of patients with and without heart disease
     st.write("Visualization of Patients with and without Heart Disease:")
-    fig=sns.countplot(x='target', data=data)
+    sns.countplot(x='target', data=data)
     plt.title('Patients with/without Heart Disease')
-    st.pyplot(fig)
+    st.pyplot(plt)
 
     # Visualize the relationship between age and heart disease
     st.write("Visualization of Age vs Heart Disease:")
-    fig=sns.boxplot(x='target', y='age', data=data)
+    sns.boxplot(x='target', y='age', data=data)
     plt.title('Age vs Heart Disease')
-    st.pyplot(fig)
+    st.pyplot(plt)
 
     # Visualize correlation heatmap
     st.write("Correlation Heatmap:")
-    fig=plt.figure(figsize=(12,8))
+    plt.figure(figsize=(12,8))
     sns.heatmap(correlation, annot=True, cmap='coolwarm')
     plt.title('Correlation Matrix')
-    st.pyplot(fig)
+    st.pyplot(plt)
 
 # Task 3: Logistic Regression
 st.header("3. Logistic Regression")
@@ -79,7 +79,7 @@ with st.echo():
     st.write(cm_logreg)
     sns.heatmap(cm_logreg, annot=True, fmt='d', cmap='Blues', xticklabels=['No Disease', 'Disease'], yticklabels=['No Disease', 'Disease'])
     plt.title('Logistic Regression Confusion Matrix')
-    st.pyplot()
+    st.pyplot(plt)
 
 # Task 4: Decision Tree
 st.header("4. Decision Tree")
@@ -100,14 +100,14 @@ with st.echo():
     st.write(cm_dtree)
     sns.heatmap(cm_dtree, annot=True, fmt='d', cmap='Blues', xticklabels=['No Disease', 'Disease'], yticklabels=['No Disease', 'Disease'])
     plt.title('Decision Tree Confusion Matrix')
-    st.pyplot()
+    st.pyplot(plt)
 
     # Visualize the decision tree
     st.write("Decision Tree Visualization:")
     plt.figure(figsize=(12,8))
     plot_tree(dtree, filled=True, feature_names=X.columns, class_names=['No Disease', 'Disease'])
     plt.title('Decision Tree Visualization')
-    st.pyplot()
+    st.pyplot(plt)
 
 # Task 5: Random Forest
 st.header("5. Random Forest")
@@ -128,7 +128,7 @@ with st.echo():
     st.write(cm_rf)
     sns.heatmap(cm_rf, annot=True, fmt='d', cmap='Blues', xticklabels=['No Disease', 'Disease'], yticklabels=['No Disease', 'Disease'])
     plt.title('Random Forest Confusion Matrix')
-    st.pyplot()
+    st.pyplot(plt)
 
 # Task 6: Model Comparison
 st.header("6. Model Comparison")
