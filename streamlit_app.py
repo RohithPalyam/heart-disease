@@ -13,7 +13,7 @@ from sklearn.metrics import precision_score, recall_score, f1_score
 # Load and process the dataset
 url = "https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/heart-disease.data"
 columns = ['age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg', 'thalach', 'exang', 'oldpeak', 'slope', 'ca', 'thal', 'target']
-data = pd.read_csv(url, names=columns)
+data = pd.read_csv("dataset.csv")
 
 # Streamlit app setup
 st.title("Heart Disease Classification")
